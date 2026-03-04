@@ -33,13 +33,27 @@ const month = Number(process.argv[2]);
 const day = Number(process.argv[3]);
 const year = Number(process.argv[4]);
 
+const birthstones = {
+  1: "Garnet",
+  2: "Amethyst",
+  3: "Aquamarine",
+  4: "Diamond",
+  5: "Emerald",
+  6: "Pearl",
+  7: "Ruby",
+  8: "Peridot",
+  9: "Sapphire",
+  10: "Opal",
+  11: "Topaz",
+  12: "Turquoise",
+}; // Got data from data.jason in birthsone-finder.js
+
 async function getDate() {
-  //   console.log(getSign({ month, day }));
-  //   console.log(getZodiac(year));
   const sign = getSign({ month, day });
   const zodiac = getZodiac(year);
+  const birthstone = birthstones[month];
   console.log(
-    `Your astrological sign is ${sign} and your zodiac sign is ${zodiac}.`
+    `Your astrological sign is ${sign} and your zodiac sign is ${zodiac}, so your birthstone is ${birthstone}!`
   );
 }
 getDate();
